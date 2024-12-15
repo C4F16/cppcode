@@ -1,1 +1,42 @@
+#include <iostream>
+using namespace std;
+struct lifeinfo {
+	char gndr;
+	bool married;
+};
+struct monyinfo {
+	int monthlysalary;
+	int yearsalary;
 
+
+
+};
+struct customerinfo {
+	string name;
+	string city;
+	string country;
+	int age;
+	monyinfo mony;
+	lifeinfo life;
+};
+int main()
+{
+	customerinfo personone;
+
+	personone.name ="Ali";
+	personone.age =20;
+	personone.city = "I";
+    personone.country = "J";
+	personone.mony.monthlysalary = 20;
+	personone.mony.yearsalary = 240;
+	personone.life.gndr = 'M';
+	personone.life.married = 1;
+	cout << personone.name << endl << personone.age << endl << personone.city << endl;
+	cout << personone.country << endl << personone.mony.monthlysalary << endl << personone.mony.yearsalary << endl;
+	cout << personone.life.gndr << endl << personone.life.married;
+
+
+
+
+	return 0;
+}
