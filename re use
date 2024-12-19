@@ -1,1 +1,54 @@
+#include <iostream>
+using namespace std;
+struct stpersoninf {
+	string name;
+	int age;
+	string city;
+	string cuntry;
+	int monthly_salary;
+	int yearly_salary;
+	char gender;
+	bool married;
+
+};
+void readinfo(stpersoninf &info) {
+	cout << " Name : " << endl;
+	cin >> info.name;
+	cout << " Age : " << endl;
+	cin >> info.age;
+	cout << " City : " << endl;
+	cin >> info.city;
+	cout << " Country : " << endl;
+	cin >> info.cuntry;
+	cout << " Monthly Salary : " << endl;
+	cin >> info.monthly_salary;
+	cout << " Yearly Salary : " << endl;
+	cin >> info.yearly_salary;
+	cout << " Gender : " << endl;
+	cin >> info.gender;
+	cout << "Married : " << endl;
+	cin >> info.married;
+
+
+}
+void printinfo(stpersoninf &info) {
+	cout << "\n****************************************\n";
+	cout << " Name : " << info.name<<endl;
+	cout << " Age : " << info.age << endl;
+	cout << " City : " << info.city<<"\n";
+	cout << " Cuntry : " << info.cuntry << endl;
+	cout << " Monthly Salary : " << info.monthly_salary << endl;
+	cout << " Yearly Salary : " << info.yearly_salary<<"\n";
+	cout << " Gender : " << info.gender<<endl;
+	cout << " Married : " << info.married;
+	cout << "\n****************************************\n";
+}
+int main()
+{
+	stpersoninf person_one;
+	readinfo(person_one);
+	printinfo(person_one);
+
+	return 0; 
+}
 
