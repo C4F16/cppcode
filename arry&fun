@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+void readgrade(int x[3]) {
+	cout << "plz enter grade1" << endl;
+	cin >> x[0];
+	cout << "plz enter grade2" << endl;
+	cin >> x[1];
+	cout << "plz enter grade3" << endl;
+	cin >> x[2];
+}
+void avggrade(int x[3]) {
+	float avg;
+	avg = (x[0] + x[1] + x[2]) / 3.0;
+	cout << "The aversge of grade is "<<avg;
+
+
+}
+void printgrade(int x[3]) {
+	cout <<"**********************************" << endl;
+	cout <<"grade1 : " << x[0] << endl;
+	cout << "grade2 : " << x[1] << endl;
+	cout <<"grade3 : " << x[2] << endl;
+	cout << "**********************************" << endl;
+}
+int main() {
+
+	int x[3];
+	readgrade(x);
+	printgrade(x);
+	avggrade(x);
+
+
+	return 0; 
+}
