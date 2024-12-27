@@ -40,3 +40,63 @@
 
 
 
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------
+
+
+
+//q4
+#include <iostream>
+using namespace std;
+
+int main() {
+    int Age;
+    int Licensedriver;
+
+    cout << "Enter ur age: ";
+    cin >> Age;
+    cout << "Do u have a driver license? (1 for Yes, 0 for No): ";
+    cin >> Licensedriver;
+
+    if (Age >= 21 && Licensedriver == 1) {
+        cout << "Hired" << endl;
+    }
+    else {
+        cout << "Rejected" << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
