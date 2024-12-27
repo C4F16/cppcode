@@ -70,20 +70,19 @@ using namespace std;
 
 int main() {
     int pin;
-    const int correctPin = 1234;
-    const int balance = 7500;
+    int correctPin = 1234;
+     int balance = 7500;
 
-    do {
-        cout << "Enter your ATM PIN: ";
-        cin >> pin;
+    cout << "Enter your ATM PIN: ";
+    cin >> pin;
 
-        if (pin == correctPin) {
-            cout << "Your Balance is: " << balance << endl;
-        } else {
-            cout << "Wrong PIN" << endl;
-        }
-    } while (pin != correctPin);
+    if (pin == correctPin) {
+        cout << "Your Balance is: " << balance << endl;
+    } else {
+        cout << "Wrong PIN" << endl;
+    }
 
     return 0;
 }
+
 
