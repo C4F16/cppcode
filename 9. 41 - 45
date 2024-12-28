@@ -1,1 +1,66 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q 44 
+#include<iostream>
+using namespace std;
+int main() {
+    int DayOfWeek;
+    cin >> DayOfWeek;
+    if (DayOfWeek == 1)
+        cout << "Sunday";
+    else if (DayOfWeek == 2)
+        cout << "Monday";
+    else if (DayOfWeek == 3)
+        cout << "Tuesday";
+    else if (DayOfWeek == 4)
+        cout << "Wendesday";
+    else if (DayOfWeek == 5)
+        cout << "Thursday";
+    else if (DayOfWeek == 6)
+        cout << "Fridday";
+    else if (DayOfWeek == 7)
+        cout << "Saturday";
+    else
+    {
+       cout<< "Wrong Day";
+    }
+    -------------------------------------
+Q 45
+
