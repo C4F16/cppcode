@@ -10,27 +10,20 @@
 
 
 
+------------------------------------------------------
+Q 32 
+#include<iostream>
+using namespace std;
+int main() {
+    int num1, num2,result=1;
+    cin >> num1 >> num2;
+    for (int i = 0; i < num2; i++)
+        result *= num1;
+    cout << result;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return 0;
+}
+-------------------------------------
 
 Q 33
 #include <iostream>
