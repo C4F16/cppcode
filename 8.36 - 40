@@ -29,4 +29,21 @@ int main() {
 
     return 0;
 }
+--------------------------------
 
+Q 37 
+#include <iostream>
+using namespace std;
+int main() {
+    int num, sum;
+    sum = 0;
+    cout << "entar number ";
+    cin >> num;
+    while (num !=-99) {
+        cin >> num;
+        sum += num;
+
+    }
+    cout << sum;
+    return 0;
+}
