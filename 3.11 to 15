@@ -1,1 +1,23 @@
+Q11
+#include<iostream>
+using namespace std;
+int main()
+{
+	int mark, mark2 , mark3 ;
+	int avrg;
+	cout << "plz entr all three marks " << endl;
+	cin >> mark >> mark2 >> mark3;
+	avrg = (mark + mark2 + mark3) / 3;
+	if (avrg >= 50) {
+		cout << "PASS";
+	}
+	else
+	{
+		cout << "FAIL";
+	}
+	return 0;
+
+ }
+----------------------------------------
+Q12
 
