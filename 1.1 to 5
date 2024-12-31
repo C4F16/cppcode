@@ -74,8 +74,42 @@ int main() {
 
     return 0;
 }
+------------------
+//Q4 
+#include<iostream>
+using namespace std;
+struct stinfo {
+	int age;
+	bool driverlicense;
+};
+stinfo readinfo() {
+	stinfo info;
+	cout << "entr ur age " << endl;
+	cin >> info.age;
+	cout << "Do u have driver licens plz entr 1 if u have or 0 if u not " << endl;
+	cin >> info.driverlicense;
+	return info;
+}
+bool condition(stinfo info) {
+	return(info.age > 21 && info.driverlicense);
+}
+void result(stinfo info) {
+	if (condition(info)) {
+		cout << "\nHired";
+	}
+	else
+	{
+		cout << endl << "Rejected";
+	}
+}
+int main()
+{
+	result(readinfo());
 
+	return 0;
 
+ }
+------------------------------------------
 
 
 
