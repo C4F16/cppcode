@@ -3,6 +3,17 @@
 
 
 
+#include <iostream>
+using namespace std;
+
+void printName() {
+    cout << "Entr ur name" << endl;
+}
+
+int main() {
+    printName();
+    return 0;
+}
 
 
 
@@ -15,6 +26,20 @@
 //Q2
 
 
+#include <iostream> 
+#include <string>
+using namespace std;
+void printName() { 
+    string name; 
+    cout << "Entr ur name" << endl;
+    getline(cin, name);
+    cout << "ur name is : " << name;
+}
+
+int main() {
+    printName();
+    return 0;
+}
 
 
 
