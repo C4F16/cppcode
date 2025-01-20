@@ -1,6 +1,17 @@
 //Q1
 
+#include <iostream>
+using namespace std;
+void printurname(string name) {
+	cout << "enter ur name : "<<name;
 
+}
+int main()
+{
+	printurname("ali");
+	return 0;
+
+}
 
 
 #include <iostream>
