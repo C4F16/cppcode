@@ -1,40 +1,55 @@
 q6
+#include <iostream>
+using namespace std;
+struct stinfo {
+    string firstname;
+    string lastname;
+};
+stinfo readinfo() {
+    stinfo info;
+    cout << "enter first name " << endl;
+    cin >> info.firstname;
+        cout << "enter last name " << endl;
+    cin >> info.lastname;
+    return info;
+}
+string getfullname(stinfo info) {
+    string fullname;
+    fullname = info.firstname + " " + info.lastname;
+    return fullname;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+void printfullname(string fullname) {
+    cout << "ur full name is : " << fullname << endl;
+}
+int main() {
+    printfullname(getfullname(readinfo()));
+    return 0;
+}
 
 ----------------------------
 q7
-
-
-
-
-
-
-
-
-
-
-
-
-
---------------------------------------
+#include <iostream>
+using namespace std;
+int readnumber(){
+     int number;
+     cout<<"enter a number "<<endl;
+     cin>>number;
+     return number;
+}
+float clculathalfnmber(int number){
+    return (float)number/2;
+}
+void printhalfnumber(int number){
+    string result;
+    result="half of "+to_string(number)+" is "+to_string(clculathalfnmber(number));
+    cout<<result<<endl;
+}
+int main() {
+    printhalfnumber(readnumber());
+    return 0;
+}
+------------------------------------
 
 q8
 #include <iostream>
