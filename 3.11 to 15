@@ -21,3 +21,40 @@ int main()
 ----------------------------------------
 Q12
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------
+Q15
+#include <iostream>
+using namespace std;
+void readrectanglearea(float &a , float &b){
+cout<<"enter tow Dimensions to calculat Rectangle Area"<<endl;
+cin>>a;
+cin>>b;
+}
+float RectangleArea(float &a , float &b){
+    return a*b;
+
+}
+void printRectangleArea(float Area){
+    cout<<"Rectangle Area = "<<Area<<endl;
+}
+int main() {
+    float a ,b ;
+readrectanglearea(a ,b);
+printRectangleArea(RectangleArea(a ,b));
+    return 0;
+}
