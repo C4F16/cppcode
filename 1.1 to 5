@@ -8,7 +8,7 @@ void printurname(string name) {
 }
 int main()
 {
-	printurname("ali");
+	printurname("name");
 	return 0;
 
 }
@@ -25,15 +25,7 @@ int main() {
     printName();
     return 0;
 }
-
-
-
-
-
-
-
-
-
+-------------------------------------------
 //Q2
 
 
@@ -51,39 +43,39 @@ int main() {
     printName();
     return 0;
 }
+-------------------------------------------
+Q3
+#include <iostream>
+using namespace std;
+enum ennumbertype{odd=1 , even=2};
 
+int readnumber(){
+    int num;
+    cout<<"enter number \n";
+    cin>>num;
+    return num;
+}
+ennumbertype checknumbertype(int num){
+    int result= num%2;
+    if(result==0)
+    return ennumbertype::even;
+    else
+    return ennumbertype::odd;
+    
+}
+void printnumbertyp(ennumbertype numbertype){
+     if(numbertype==ennumbertype::even)
+    cout<<"numer is even "<<endl;
+    else{
+        cout<<"numer is odd "<<endl;
+    }
+    
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+int main() {
+   printnumbertyp(checknumbertype(readnumber()));
+    return 0;
+}
 ---------------------------------------------------------------------------------------------
 
 
@@ -146,7 +138,50 @@ int main()
 
  }
 ------------------------------------------
+Q5
+#include<iostream>
+using namespace std;
+struct stinfo {
+	int age;
+	bool driverlicense;
+	bool hasrecommendation;
+};
+stinfo readinfo() {
+	stinfo info;
+	cout << "entr ur age " << endl;
+	cin >> info.age;
+	cout << "Do u have driver licens plz entr 1 if u have or 0 if u not " << endl;
+	cin >> info.driverlicense;
+	cout<<"Do u have recommendation? "<<endl;
+	cin>>info.hasrecommendation;
+	
+	
+	return info;
+}
+bool condition(stinfo info) {
+    if(info.hasrecommendation){
+        return true;
+    }
+    else{
+	return(info.age > 21 && info.driverlicense);
+}
+    }
+void printresult(stinfo info) {
+	if (condition(info)) {
+		cout << "\nHired";
+	}
+	else
+	{
+		cout << endl << "Rejected";
+	}
+}
+int main()
+{
+	printresult(readinfo());
 
+	return 0;
+
+ }
 
 
 
