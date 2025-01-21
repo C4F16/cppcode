@@ -1,1 +1,25 @@
+Q16
+#include <iostream>
+#include <cmath>
+using namespace std;
+void Readnumber(float &a , float &b){
+cout<<"enter tow Dimensions to calculat Area"<<endl;
+cin>>a;
+cin>>b;
+}
+float Rectangleareabysideanddiagonal(float a , float b){
+    float Area=a*(sqrt(pow(b,2)-pow(a,2)));
+return Area;
 
+}
+void PrintAraeResult(float Area){
+    cout<<"Rectangle Area = "<<Area<<endl;
+}
+int main() {
+    float a ,b ;
+   Readnumber(a , b);
+    PrintAraeResult(Rectangleareabysideanddiagonal(a ,b));
+    return 0;
+}
+----------------------------------------
+Q17
