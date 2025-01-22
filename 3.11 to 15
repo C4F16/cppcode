@@ -131,9 +131,9 @@ Q14
 #include <iostream>
 using namespace std;
 void readnumber(int& a, int& b) {
-    cout << "enter number 1 \n";
+    cout << "enter number1 \n";
     cin >> a;
-    cout << "enter number 2 \n";
+    cout << "enter number2 \n";
     cin >> b;
 }
 void SwapNumber(int &a , int &b) {
