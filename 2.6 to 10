@@ -68,4 +68,91 @@ int main() {
 
     return 0;
 }
+-------------------------------------------
+#include <iostream>
+using namespace std;
+enum enMark { Pass = 1, Fail = 2 };
+
+int readnumber() {
+    int Mark;
+    cout << "enter Mark \n";
+    cin >> Mark;
+    return Mark;
+}
+enMark CheckMark(int Mark) {
+    if (Mark >= 50)
+        return enMark::Pass;
+    else
+        return enMark::Fail;
+
+}
+void PrintResult(int Mark) {
+    if (Mark == enMark::Pass)
+        cout << "u Passed" << endl;
+    else {
+        cout << "u Faild" << endl;
+    }
+
+}
+
+int main() {
+    PrintResult(CheckMark(readnumber()));
+    return 0;
+}
 --------------------------------------------
+Q9
+#include <iostream>
+using namespace std;
+void readnumber(int &a , int &b , int &c) {
+    cout << "enter number1 \n";
+    cin >>a;
+    cout << "enter number2 \n";
+    cin >> b;
+    cout << "enter number3 \n";
+    cin >> c;
+
+}
+int SumOf3Number(int a, int b, int c) {
+    int sum;
+    sum = a + b + c;
+    return sum;
+}
+void PrintSumOf3Number(int sum) {
+    cout << "The Sum Of 3 Number " << sum;
+}
+int main() {
+    int a, b, c;
+    readnumber(a,b,c);
+    PrintSumOf3Number(SumOf3Number(a,b,c));
+    return 0;
+}
+---------------------------------------
+Q10
+#include <iostream>
+using namespace std;
+void readnumber(int &a , int &b , int &c) {
+    cout << "enter number1 \n";
+    cin >>a;
+    cout << "enter number2 \n";
+    cin >> b;
+    cout << "enter number3 \n";
+    cin >> c;
+
+}
+int SumOf3Number(int a, int b, int c) {
+    int Sum;
+    Sum = (a + b + c);
+    return Sum;
+}
+float AverageOfNumber(int Sum) {
+    return (float)Sum / 3;
+}
+void PrintAvgOf3Number(float Avg) {
+    cout << "The Average Of Number is :" << Avg;
+}
+int main() {
+    int a, b, c;
+    readnumber(a,b,c);
+    PrintAvgOf3Number(AverageOfNumber(SumOf3Number(a,b,c)));
+    return 0;
+}
