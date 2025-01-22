@@ -23,3 +23,94 @@ int main() {
 }
 ----------------------------------------
 Q17
+#include <iostream>
+using namespace std;
+void Readnumber(float& a, float& b) {
+    cout << "enter  tow Number to Calculat " << endl;
+    cin >> a;
+    cin >> b;
+}
+float TriangleArea(float a, float b) {
+    float Area = 0.5 * (a*b);
+    return Area;
+
+}
+void PrintAraeResult(float Area) {
+    cout << "Triangle Area = " << Area << endl;
+}
+int main() {
+    float a, b;
+    Readnumber(a, b);
+    PrintAraeResult(TriangleArea(a, b));
+    return 0;
+}
+--------------------------------------------
+Q18
+#include <iostream>
+#include <cmath>
+using namespace std;
+void Readnumber(float& a) {
+    cout << "enter Number to calculat Circle Area" << endl;
+    cin >> a;
+}
+float CircleArea(float a) {
+    float Area = 3.14 * pow(a, 2);
+    return Area;
+
+}
+void PrintCircleArea(float Area) {
+    cout << "Circle Area = " << Area << endl;
+}
+int main() {
+    float a;
+    Readnumber(a);
+    PrintCircleArea(CircleArea(a));
+    return 0;
+}
+-----------------------------------------------
+Q19
+#include <iostream>
+#include <cmath>
+using namespace std;
+void Readnumber(float& a) {
+    cout << "enter Number to calculat Circle Area Through Diameter" << endl;
+    cin >> a;
+}
+float CircleArea(float a) {
+    float Area = (3.14 * pow(a, 2))/4;
+    return Area;
+
+}
+void PrintCircleArea(float Area) {
+    cout << "Circle Area = " << Area << endl;
+}
+int main() {
+    float a;
+    Readnumber(a);
+    PrintCircleArea(CircleArea(a));
+    return 0;
+}
+---------------------------------------------------------
+Q20
+#include <iostream>
+using namespace std;
+float Readnumber() {
+    float a;
+    cout << "enter Number to calculat Circle Area Inscribed in a Square" << endl;
+    cin >> a;
+    return a;
+}
+float CalculatCircleAreaInscribedinASquare(float a) {
+    float Area = (3.14*pow(a,2))/4;
+    return Area; 
+
+}
+void PrintCircleAreaInscribedinASquare(float Area) {
+    cout << "Circle Area = " << Area << endl;
+}
+int main() {
+    
+    PrintCircleAreaInscribedinASquare(CalculatCircleAreaInscribedinASquare(Readnumber()));
+    return 0;
+}
+
