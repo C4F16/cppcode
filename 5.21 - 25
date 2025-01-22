@@ -20,38 +20,60 @@ int main() {
     return 0;
 }
 -----------------------------------
+Q22
+#include <iostream>
+using namespace std;
+void Readnumber(float& a, float& b) {
+    cout << "enter  tow Number to Calculat Circle Area Inscribed in an Isosceles Triangle" << endl;
+    cin >> a;
+    cin >> b;
+}
+float CalaulatCircleAreaInscribedInAnIsoscelesTriangle(float a, float b) {
+    float Area;
 
+    Area = ((3.14 * pow(b, 2))/ 4) * (((2*a)-b)/((2*a)+b));
+    return Area;
 
+}
+void PrintAraeResult(float Area) {
+    cout << "Circle Area Inscribed in an Isosceles Triangle = " << Area << endl;
+}
+int main() {
+    float a, b;
+    Readnumber(a, b);
+    PrintAraeResult(CalaulatCircleAreaInscribedInAnIsoscelesTriangle(a, b));
+    return 0;
+}
+--------------------------------------------------------------
+Q23
+#include <iostream>
+#include<cmath>
+using namespace std;
+void Readnumber(float& a, float& b, float &c) {
+    cout << "enter Three Number to Calculat Circle Area circle Described Around an Arbitrary Triangle" << endl;
+    cin >> a;
+    cin >> b;
+    cin >> c;
+}
+float CalaulatCircleAreaCircleDescribedAroundAnArbitraryTriangle(float a, float b , float c) {
+    float Area;
+    float P, Q;
+    P = (a + b + c) / 2;
+    Q = (a * b * c) / (4 * sqrt(P*(P - a) * (P - b) * (P - c)));
+    Area = 3.14 * pow(Q, 2);
+    return Area;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--------------------------------
+}
+void PrintAraeResult(float Area) {
+    cout << "Circle Area circle Described Around an Arbitrary Triangle = " << Area << endl;
+}
+int main() {
+    float a, b , c;
+    Readnumber(a, b, c);
+    PrintAraeResult(CalaulatCircleAreaCircleDescribedAroundAnArbitraryTriangle(a, b ,c));
+    return 0;
+}
+----------------------------------------------------------------------
 Q24 
 #include<iostream>
 using namespace std;
@@ -70,9 +92,74 @@ int main()
 	return 0;
 
  }
+------------------------------
+#include <iostream>
+using namespace std;
+int ReadAge() {
+    int Age;
+    cout << "enter ur Age " << endl;
+    cin >> Age;
 
+    return Age;
+}
+bool CheckAge(int Age , int from , int to) {
+   return  (Age >=from && Age <=to );
+}
+void PrintResult(int Age) {
+    if (CheckAge(Age , 18 , 45))
+        cout <<Age <<" Is Valid Age"<<endl;
+    else
+    
+        cout << Age << " Is Invalid Age ";
+    
+
+}
+int main() {
+    PrintResult(ReadAge());
+    return 0;
+     
+}
 -------------------------------
+Q25
+#include <iostream>
+using namespace std;
+int ReadAge() {
+    int Age;
+    cout << "enter ur Age " << endl;
+    cin >> Age;
 
+    return Age;
+}
+bool CheckAge(int Age , int from , int to) {
+   return  (Age >=from && Age <=to );
+}
+int ReadUntilAgeBetween(int from, int to) {
+    int Age = 0;
+    do
+    {
+        Age = ReadAge();
+
+    } while (!CheckAge(Age, from, to));
+       return Age;
+
+       
+    
+}
+
+void PrintResult(int Age) {
+    if (CheckAge(Age , 18 , 45))
+        cout <<Age <<" Is Valid Age"<<endl;
+    else
+    
+        cout << Age << " Is Invalid Age ";
+    
+
+}
+int main() {
+    PrintResult(ReadUntilAgeBetween(18 , 45));
+    return 0;
+     
+}
 
 
 
