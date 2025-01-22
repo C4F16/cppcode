@@ -19,24 +19,144 @@ int main()
 
  }
 ----------------------------------------
+#include <iostream>
+using namespace std;
+enum enMark { Pass = 1, Fail = 2 };
+
+void readnumber(int& a, int& b, int& c) {
+    cout << "enter number1 \n";
+    cin >> a;
+    cout << "enter number2 \n";
+    cin >> b;
+    cout << "enter number3 \n";
+    cin >> c;
+
+}
+enMark CheckAverage(float Averge) {
+    if (Averge >= 50)
+        return enMark::Pass;
+    else
+        return enMark::Fail;
+
+}
+int SumOf3Number(int a, int b, int c) {
+    int Sum;
+    Sum = (a + b + c);
+    return Sum;
+
+}
+float AverageOfNumber(int Sum) {
+    return (float)Sum / 3;
+}
+void PrintResult(float Average) {
+    cout << "ua Average is : " << Average << endl;
+    if (CheckAverage(Average) == enMark::Pass)
+        cout << "u Passed" << endl;
+    else {
+        cout << "u Faild" << endl;
+    }
+
+}
+
+int main() {
+    int a, b, c;
+    readnumber(a, b, c);
+    PrintResult(AverageOfNumber(SumOf3Number(a,b,c)));
+    return 0;
+}
+
+----------------------------------------
 Q12
+#include <iostream>
+using namespace std;
+void readnumber(int& a, int& b) {
+    cout << "enter number1 \n";
+    cin >> a;
+    cout << "enter number2 \n";
+    cin >> b;
+}
+int MaxOf2Numbers(int a, int b) {
+    if (a > b)
+        return a;
+    else
+    {
+        return b;
+    }
+}
+void PrintMaxOf2Numbers(int Max) {
+    cout << "The Maximum Number is : " << Max<<endl;
 
+}
+int main() {
+    int a, b;
+    readnumber(a, b);
+    PrintMaxOf2Numbers(MaxOf2Numbers(a, b));
+    return 0;
+}
+------------------------------------------
+Q13
+#include <iostream>
+using namespace std;
+void readnumber(int& a, int& b , int &c) {
+    cout << "enter number 1 \n";
+    cin >> a;
+    cout << "enter number 2 \n";
+    cin >> b;
+    cout << "enter number 3" << endl;
+    cin >> c;
 
+}
+int MaxOf2Numbers(int a, int b , int c) {
+    if (a > b and a > c)
+        return a;
+    else if (b > a and b > c)
+        return b;
+    else
+        return c;
 
+    
+}
+void PrintMaxOf2Numbers(int Max) {
+    cout << "The Maximum Number is : " << Max<<endl;
 
+}
+int main() {
+    int a, b ,c;
+    readnumber(a, b , c);
+    PrintMaxOf2Numbers(MaxOf2Numbers(a, b , c));
+    return 0;
+}
+-------------------------------------
+Q14
+#include <iostream>
+using namespace std;
+void readnumber(int& a, int& b) {
+    cout << "enter number 1 \n";
+    cin >> a;
+    cout << "enter number 2 \n";
+    cin >> b;
+}
+void SwapNumber(int &a , int &b) {
+    int c;
+    c = a;
+    a = b;
+    b = c;
 
+}
+void PrintSwapResult(int a , int b) {
+    cout <<endl <<"Number 1 " << a<<endl;
+    cout << "Number 2 " << b<<endl;
 
-
-
-
-
-
-
-
-
-
-
------------------
+}
+int main() {
+    int a, b;
+    readnumber(a, b);
+    PrintSwapResult(a,b);
+    SwapNumber(a, b);
+    PrintSwapResult(a, b);
+    return 0;
+}
+--------------------------------------
 Q15
 #include <iostream>
 using namespace std;
