@@ -1,5 +1,25 @@
+Q21 
+#include <iostream>
+using namespace std;
+void Readnumber(float& a ) {
+    cout << "enter circumference " << endl;
+    cin >> a;
+}
+float CircleAreaAlongtheCircumference(float a) {
+    float Area = pow(a,2)/(4*3.14) ;
+    return Area;
 
-
+}
+void PrintAraeResult(float Area) {
+    cout << "Circle Area = " << Area << endl;
+}
+int main() {
+    float a;
+    Readnumber(a);
+    PrintAraeResult(CircleAreaAlongtheCircumference(a));
+    return 0;
+}
+-----------------------------------
 
 
 
