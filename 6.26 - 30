@@ -53,11 +53,32 @@ int main()
 	return 0;
 
  }
+-------------------------------------------
+#include<iostream>
+using namespace std;
+int ReadNumber() {
+	int a;
+	cout << "enter Number " << endl;
+	cin >> a;
+	return a;
+}
+
+void PrintNumbersFromTo(int a) {
+	for (int i = a;i >=1;i--) {
+		cout << i << endl;
+	}
+}
+int main() {
 
 
 
+	PrintNumbersFromTo(ReadNumber());
 
--*--------------------------
+
+	return 0;
+
+}
+------------------------------------------
 Q28 
 #include <iostream>
 using namespace std;
@@ -75,8 +96,29 @@ int main()
     cout << "sum = "<<sum;
     return 0;
 }
+------------------------------------------
 
 
+#include<iostream>
+using namespace std;
+int ReadNumber() {
+	int num;
+	cout << "enter Number " << endl;
+	cin >> num;
+	
+	return num;
+
+}
+int CalculatFactorial() {
+
+}
+int main() {
+	int a=0;
+
+
+	return 0;
+
+}
 
 
 
