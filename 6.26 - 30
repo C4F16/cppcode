@@ -227,7 +227,8 @@ int FactorialOfN(int num) {
 
 }
 void PrintFactorialOfN( int a) {
-	cout << "The Factorial of N : "<<FactorialOfN(a);
+		cout << "The Factorial Of "<<a<<" is : " << FactorialOfN(a);
+
 }
 
 int main() {
