@@ -12,7 +12,33 @@ int main()
 	return 0;
 
  }
------------------
+---------------------------------------
+#include<iostream>
+using namespace std;
+int ReadNumber() {
+	int a;
+	cout << "enter Number " << endl;
+	cin >> a;
+	return a;
+}
+
+void PrintNumbersFromTo(int a) {
+	for (int i = 1;i <= a;i++) {
+		cout<<i<<endl;
+	}
+}
+int main() {
+
+
+
+	PrintNumbersFromTo(ReadNumber());
+
+	
+	return 0;
+
+}
+
+---------------------------------------
 Q27
 #include<iostream>
 using namespace std;
