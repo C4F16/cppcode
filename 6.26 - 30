@@ -97,36 +97,43 @@ int main()
     return 0;
 }
 ------------------------------------------
-
-
 #include<iostream>
 using namespace std;
+enum enEvenOrOdd{odd=1 , Even=2};
 int ReadNumber() {
 	int num;
 	cout << "enter Number " << endl;
 	cin >> num;
-	
+
 	return num;
+}
+enEvenOrOdd CheckEvenOrOdd(int num) {
+	if (num % 2 != 0)
+		return enEvenOrOdd::odd;
+	else
+		return enEvenOrOdd::Even;
 
 }
-int CalculatFactorial() {
-
+int PrintSumOddNumbers(int a) {
+	cout << "The Sum Of Odd Numbers : ";
+	int sum = 0;
+	for (int i = 1; i <= a; i++)
+	{
+		if (CheckEvenOrOdd(i) == enEvenOrOdd::odd)
+		{
+			sum += i;
+		}
+	}
+	return sum;
 }
+
 int main() {
-	int a=0;
-
+	int a =ReadNumber();
+	cout<<PrintSumOddNumbers(a);
 
 	return 0;
 
 }
-
-
-
-
-
-
-
-
 -----------------------------------------
 Q29 
 #include <iostream>
@@ -143,26 +150,45 @@ int main() {
     
     cout << "\nthe sum of even num for " << num << ":"<<sum;
     return 0;
+------------------------------------------------------
+#include<iostream>
+using namespace std;
+enum enEvenOrOdd{odd=1 , Even=2};
+int ReadNumber() {
+	int num;
+	cout << "enter Number " << endl;
+	cin >> num;
 
+	return num;
+}
+enEvenOrOdd CheckEvenOrOdd(int num) {
+	if (num % 2 == 0)
+		return enEvenOrOdd::Even;
+	else
+		return enEvenOrOdd::odd;
 
+}
+int PrintSumEvenNumbers(int a) {
+	cout << "The Sum Of Even Numbers : ";
+	int sum = 0;
+	for (int i = 1; i <= a; i++)
+	{
+		if (CheckEvenOrOdd(i) == enEvenOrOdd::Even)
+		{
+			sum += i;
+		}
+	}
+	return sum;
+}
 
+int main() {
+	int a =ReadNumber();
+	cout<<PrintSumEvenNumbers(a);
 
+	return 0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
---------------
+}
+----------------------------------------------------
 Q 30 
 #include <iostream>
 using namespace std;
@@ -180,4 +206,35 @@ int main() {
     cout << "Factorial of " << N << " = " << factorial << endl;
     return 0;
 }
+---------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int ReadNumber() {
+	int num;
+	cout << "enter a Poitive Number " << endl;
+	cin >> num;
 
+	return num;
+}
+int FactorialOfN(int num) {
+	int Factorial=1;
+	for (int i = num; i>=1; i--) 
+	{
+		Factorial*= i;
+
+	}
+	return Factorial;
+
+}
+void PrintFactorialOfN( int a) {
+	cout << "The Factorial of N : "<<FactorialOfN(a);
+}
+
+int main() {
+	int a =ReadNumber();
+ PrintFactorialOfN(a);
+
+	return 0;
+
+}
+---------------------------------------------------------------------
