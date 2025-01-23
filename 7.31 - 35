@@ -1,15 +1,29 @@
+Q31
+#include<iostream>
+using namespace std;
+int ReadNumber() {
+	int num;
+	cout << "enter a Number " << endl;
+	cin >> num;
+
+	return num;
+}
+void CalculatPowrOf2_3_4(int num) {
+	int a, b, c;
+	a = num * num;
+	b = num * num * num;
+	c = num * num * num * num;
+	cout << a << " " << b << " " << c;
+}
 
 
 
+int main() {
+	CalculatPowrOf2_3_4(ReadNumber());
 
+	return 0;
 
-
-
-
-
-
-
-
+}
 ------------------------------------------------------
 Q 32 
 #include<iostream>
@@ -22,6 +36,37 @@ int main() {
     cout << result;
 
     return 0;
+}
+-------------------------------------
+#include<iostream>
+using namespace std;
+int ReadNumber() {
+	int a;
+	cout << "enter Number " << endl;
+	cin >>a;
+	return a;
+}
+int ReadPowr() {
+	int b;
+	cout << "enter Powr " << endl;
+	cin >> b;
+	return b;
+}
+int CalculatPowrOfM(int a, int b) {
+	if (b == 0) {
+		return 1;
+	}
+	int p=1;
+	for (int i=1; i <= b; i++) 
+	{
+		 p*=a;
+	}
+	return p;
+}
+int main() {
+	cout << CalculatPowrOfM(ReadNumber(), ReadPowr());
+	return 0;
+
 }
 -------------------------------------
 
@@ -51,6 +96,39 @@ int main() {
     return 0;
 }
 ------------------------------------------
+#include<iostream>
+using namespace std;
+int ReadMark(int From , int To) {
+	int a;
+	do
+	{
+		cout << "enter Mark " << endl;
+		cin >> a;
+
+	} while (a<From||a>To);
+	return a;
+}
+char CheckMark(int a) {
+	if (a >= 90)
+		return 'A';
+	else if (a >= 80)
+		return 'B';
+	else if (a >= 70)
+		return 'C';
+	else if (a >= 60)
+		return 'D';
+	else if (a >= 50)
+		return 'E';
+	else
+		return 'F';
+}
+
+int main() {
+	cout << "Result = " << CheckMark(ReadMark(0, 100));
+	return 0;
+
+}
+------------------------------------------
 Q 34
 #include <iostream>
 using namespace std;
@@ -58,7 +136,7 @@ using namespace std;
 int main() {
     double TotalSales, Percentage, Commission;
 
-    cout << "Enter Total Sales: ";
+    cout << "Enter Total Sales ";
     cin >> TotalSales;
 
     if (TotalSales > 1000000) {
@@ -79,3 +157,40 @@ int main() {
     return 0;
 }
 -------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int ReadTotalSales() {
+	int a;
+	cout << "enter Total Sales ";
+	cin >> a;
+	return a;
+}
+float GetCommissionPercentage(float TotalSales) {
+	if (TotalSales > 1000000) {
+		return  0.01;
+	}
+	else if (TotalSales > 500000) {
+		return  0.02;
+	}
+	else if (TotalSales > 100000) {
+		return  0.03;
+	}
+	else if (TotalSales > 50000) {
+		return  0.05;
+	}
+	else {
+		return  0.0;
+	}
+}
+float CalculatTotalSales(float TotalSales) {
+	return GetCommissionPercentage(TotalSales)* TotalSales;
+}
+int main() {
+	float TotalSales = ReadTotalSales();
+	cout << "Commission Percentage" << GetCommissionPercentage(TotalSales) << endl;
+	cout<<endl<<"Total Sales"<<CalculatTotalSales(TotalSales);
+	return 0;
+
+}
+-------------------------------------------------------------------------------
+Q35
