@@ -1,42 +1,116 @@
+Q41
+#include<iostream>
+#include<cmath>
+using namespace std;
+float ReadNumber(string massag) {
+	float a;
+	cout << massag << endl;
+	cin >> a;
+	return a;
+}
+float HoursToDay(float NumberOfHour) {
+	return (float)NumberOfHour / 24;
+}
+float HoursToWeek(float NumberOfHour) {
+	return (float)NumberOfHour / 24 / 7;
+}
+
+float DayToWeek(float NumberOfDay) {
+	return (float)NumberOfDay / 7;
+}
+
+int main() {
+	float NumberOfHour = ReadNumber("Enter Number Of Hours ");
+		float NumberOfDay = HoursToDay(NumberOfHour);
+		float NumberOfWeek = DayToWeek(NumberOfDay);
+		cout << endl << "Total Hours = " << NumberOfHour << endl;
+		cout << "Total Days = " << NumberOfDay << endl;
+		cout << "Total Weeks = " << HoursToWeek(NumberOfHour) << endl;
+
+	return 0;
+}
+--------------------------------------------
+Q42
+#include<iostream>
+#include<cmath>
+using namespace std;
+struct stTime
+{
+	int NumberOfdays ,NumberOfhours, NumberOfminutes, NumberOfseconds;
+
+};
+int ReadNumber(string massag) {
+	int a;
+	cout << massag << endl;
+	cin >> a;
+	return a;
+}
+stTime ReadTaskDuration() {
+	stTime TaskDuration;
+	TaskDuration.NumberOfdays= ReadNumber("Enter Number Of Day ");
+TaskDuration.NumberOfhours= ReadNumber("Enter Number Of Hours ");
+TaskDuration.NumberOfminutes= ReadNumber("Enter Number Of Minutrs ");
+TaskDuration.NumberOfseconds= ReadNumber("Enter Number Of Seconds ");
+return TaskDuration;
+
+}
+
+int TaskDurationInSecond(stTime TaskDuration) {
+	int DurationInSecond;
+	DurationInSecond = TaskDuration.NumberOfdays * 24 * 60 * 60;
+	DurationInSecond += TaskDuration.NumberOfhours * 60 * 60;
+	DurationInSecond += TaskDuration.NumberOfminutes * 60;
+	DurationInSecond += TaskDuration.NumberOfseconds;
+	return DurationInSecond;
+}
+int main() {
+	cout << endl << "Task Duration In Second : " << TaskDurationInSecond(ReadTaskDuration());
+
+	return 0;
+}
+--------------------------------------------
+Q43
+#include<iostream>
+#include<cmath>
+using namespace std;
+struct stTime
+{
+	int NumberOfdays ,NumberOfhours, NumberOfminutes, NumberOfseconds;
+
+};
+int ReadNumber(string massag) {
+	int a;
+	cout << massag << endl;
+	cin >> a;
+	return a;
+}
+stTime ReadTaskDuration(int TotalSeconds) {
+	stTime TaskDuration;
+	const int SecondsPerDay = 24 * 60 * 60;
+	const int SecondsPerHour = 60 * 60;
+	const int SecondsPerMinute = 60;
+	int Reminder;
+	TaskDuration.NumberOfdays = floor(TotalSeconds / SecondsPerDay);
+	Reminder = TotalSeconds % SecondsPerDay;
+	TaskDuration.NumberOfhours = floor(Reminder / SecondsPerHour);
+	Reminder = Reminder % SecondsPerHour;
+	TaskDuration.NumberOfminutes = floor(Reminder / SecondsPerMinute);
+	Reminder = Reminder % SecondsPerMinute;
+	TaskDuration.NumberOfseconds = Reminder;
+	return TaskDuration;
+}
 
 
+void PrintTaskDurationToSecondDetals(stTime TaskDuration) {
+	cout << endl << TaskDuration.NumberOfdays << ":" << TaskDuration.NumberOfhours << ":" << TaskDuration.NumberOfminutes << ":" << TaskDuration.NumberOfseconds << endl;
+}
+int main() {
+	int TotalSeconds= ReadNumber("Enter Number Of Seconds ");
+	PrintTaskDurationToSecondDetals(ReadTaskDuration(TotalSeconds));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	return 0;
+}
+--------------------------------------------
 Q 44 
 #include<iostream>
 using namespace std;
@@ -61,7 +135,57 @@ int main() {
     {
        cout<< "Wrong Day";
     }
-    -------------------------------------
+--------------------------------------------
+#include<iostream>
+#include<cmath>
+using namespace std;
+enum enNumberOfDay{Sat =1, Sun = 2, Mon = 3, Tue = 4, Wed = 5, Thu =6,Fri=7};
+int ReadNumber(string massag , int From , int To ) {
+	int a;
+	do
+	{
+		cout << massag << endl;
+		cin >> a;
+
+	} while (a<=From||a>=To);
+	
+	return a;
+}
+enNumberOfDay ReadDayOfWeek() {
+	return (enNumberOfDay)ReadNumber("Enter Number Of Week", 1, 7);
+}
+string GetDayOfWeek(enNumberOfDay Day) {
+	switch (Day)
+	{
+	case enNumberOfDay::Sat:
+		return	"Saturday ";
+
+	case enNumberOfDay::Sun:
+		return "Sunday ";
+	case enNumberOfDay::Mon:
+		return "Monday";
+
+	case enNumberOfDay::Tue:
+		return "Tuesday";
+
+	case enNumberOfDay::Wed:
+		return "Wednesday";
+
+	case enNumberOfDay::Thu:
+		return "Thursday";
+
+	case enNumberOfDay::Fri:
+		return "Friday";
+
+	default:
+		return "Not ur Day";
+	}
+}
+int main() {
+	cout<<GetDayOfWeek(ReadDayOfWeek());
+	return 0;
+}
+--------------------------------------------
 Q 45
 #include<iostream>
 using namespace std;
@@ -111,5 +235,61 @@ int main() {
     }
 
 }
+--------------------------------------------
+#include<iostream>
+#include<cmath>
+using namespace std;
+enum enNumberOfMonth {
+	Jan = 1, Feb = 2, Mar = 3, Apr = 4, May = 5, Jun = 6,
+	Jul = 7, Aug = 8, Sep = 9, Oct = 10, Nov = 11, Dec = 12
+}; 
+int ReadNumber(string massag , int From , int To ) {
+	int a;
+	do
+	{
+		cout << massag << endl;
+		cin >> a;
 
+	} while (a<=From||a>=To);
+	
+	return a;
+}
+enNumberOfMonth ReadMothOfYear() {
+	return (enNumberOfMonth)ReadNumber("Enter Number Of Month",0,13 );
+}
+string GetMonthOfYear(enNumberOfMonth Month) {
+	switch (Month) {
+	case enNumberOfMonth::Jan: 
+		return "January";
+	case enNumberOfMonth::Feb:
+		return "February";
+	case enNumberOfMonth::Mar:
+		return "March";
+	case enNumberOfMonth::Apr:
+		return "April";
+	case enNumberOfMonth::May:
+		return "May";
+	case enNumberOfMonth::Jun: 
+		return "June";
+	case enNumberOfMonth::Jul: 
+		return "July";
+	case enNumberOfMonth::Aug: 
+		return "August";
+	case enNumberOfMonth::Sep: 
+		return "September";
+	case enNumberOfMonth::Oct: 
+		return "October";
+	case enNumberOfMonth::Nov: 
+		return "November";
+	case enNumberOfMonth::Dec: 
+		return "December";
+	default: 
+		return "Invalid Month";
+	}
+}
+
+int main() {
+	cout<<GetMonthOfYear(ReadMothOfYear());
+	return 0;
+}
 
