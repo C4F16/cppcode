@@ -30,6 +30,48 @@ int main() {
     return 0;
 }
 --------------------------------
+#include<iostream>
+using namespace std;
+enum enOperation { Add = '+', Subtract = '-', Multiply = '*',Divide='/' };
+float ReadNumber(string massag) {
+	int a=0;
+	cout << massag << endl;
+	cin >> a;
+	return a;
+}
+enOperation ReadOperationTyp() {
+	char OperationTyp='_';
+	cout << "Enter Operation (+,-,*,/)"<<endl;
+	cin >> OperationTyp;
+	return (enOperation)OperationTyp;
+}
+float SimpleCalculator(float num1 , float num2 , enOperation OperationTyp) {
+	switch (OperationTyp)
+	{
+	case enOperation::Add:
+		return num1 + num2;
+	case enOperation::Subtract:
+		return num1 - num2;
+	case enOperation::Multiply:
+		return num1 * num2;
+	case enOperation::Divide:
+		if (num1==0 || num2 == 0)
+			cout << "404 (:";
+		else
+		return num1 / num2;
+	default:
+		break;
+	}
+}
+int main() {
+	float num1, num2;
+	num1 = ReadNumber("Enter First Nunmber ");
+	num2 = ReadNumber("Enter Second Nunmber ");
+	enOperation OperationTyp = ReadOperationTyp();
+	cout <<"Result = " << SimpleCalculator(num1,num2,OperationTyp);
+	return 0;
+}
+--------------------------------
 
 Q 37 
 #include <iostream>
@@ -46,4 +88,125 @@ int main() {
     }
     cout << sum;
     return 0;
+}
+-----------------------------------------
+#include<iostream>
+using namespace std;
+float ReadNumber(string massag) {
+	int a=0;
+	cout << massag << endl;
+	cin >> a;
+	return a;
+}
+
+int SumNumberUntil_99() {
+    
+        int num=0 ,sum;
+        sum = 0;
+        while (num != -99) {
+            cout << "Enter Number" << endl;
+            cin >> num;
+            sum += num;
+
+        }
+        return sum;
+    
+
+}
+int main() {
+	int num1;
+	num1 = ReadNumber("Enter Nunmber ");
+    cout <<"Result = " << SumNumberUntil_99();
+	return 0;
+}
+-----------------------------------------
+Q38
+#include<iostream>
+#include<cmath>
+using namespace std;
+enum enisprimenumber{Prime=1,NotPrime=2};
+int ReadNumber(string massag) {
+	int a;
+	cout << massag << endl;
+	cin >> a;
+	return a;
+}
+enisprimenumber CheckNumber(int a) {
+	int num=round(a/2);
+	if (a<2) {
+		return enisprimenumber::NotPrime;
+
+	}
+	for (int i = 2; i <= num; i++) 
+	{
+		if (a % i == 0)
+			return enisprimenumber::NotPrime;
+	}
+
+			return enisprimenumber::Prime;
+		
+}
+void PrintNumberTyp(int a) {
+	if (CheckNumber(a)==enisprimenumber::Prime)
+		cout << "Prime Number"<<endl;
+	else
+		cout << "Not Prime Number"<<endl;
+}
+int main() {
+	 PrintNumberTyp(ReadNumber("Enter Nunmber "));
+	 
+	return 0;
+}
+/*كود هدهود في غلط اذا دخلت 1 راح يطلع برام بس هذا غلط لازم مش اولي*/
+-----------------------------------------
+Q39
+#include<iostream>
+#include<cmath>
+using namespace std;
+float ReadNumber(string massag) {
+	float a;
+	cout << massag << endl;
+	cin >> a;
+	return a;
+}
+float CalculatRemainder(float TB ,float CP) {
+	return CP-TB;
+}
+
+int main() {
+	float TotalBil, CashPaid;
+	TotalBil = ReadNumber("Enter Total Bil ");
+	CashPaid = ReadNumber("Enter  Cash Paid ");
+	cout << "Total Bil :" << TotalBil << endl;
+	cout << "Cash Paid :" << CashPaid << endl;
+	cout << "-----------------------------------------------------" << endl;
+	cout << "Remainder = " << CalculatRemainder(TotalBil,CashPaid)<<endl;
+	return 0;
+}
+-----------------------------------------
+Q40
+#include<iostream>
+#include<cmath>
+using namespace std;
+float ReadNumber(string massag) {
+	float a;
+	cout << massag << endl;
+	cin >> a;
+	return a;
+}
+float CalculatRemainder(float TB) {
+	
+	TB = TB * 1.1;
+	TB = TB * 1.16;
+		
+		return TB;
+}
+
+int main() {
+	float TotalBil;
+	TotalBil = ReadNumber("Enter Total Bil ");
+	cout << "Total Bil :" << TotalBil << endl;
+	cout << "-----------------------------------------------------" << endl;
+	cout << "Total Bil After Service Fee and Sales Tax = " << CalculatRemainder(TotalBil)<<endl;
+	return 0;
 }
