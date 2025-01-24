@@ -194,3 +194,41 @@ int main() {
 }
 -------------------------------------------------------------------------------
 Q35
+#include<iostream>
+using namespace std;
+struct  StPiggyBank
+
+{
+	int Penny, Nickel, Dime, Quarter, Dollar;
+	
+};
+StPiggyBank ReadPiggyBank() {
+	StPiggyBank Coins;
+	cout << "Enter Penny " << endl;
+	cin >> Coins.Penny;
+	cout << "Enter Nickel " << endl;
+	cin >> Coins.Nickel;
+	cout << "Enter Dime " << endl;
+	cin >> Coins.Dime;
+	cout << "Enter Quarter " << endl;
+	cin >> Coins.Quarter;
+	cout << "Enter Dollar " << endl;
+	cin >> Coins.Dollar;
+	return Coins;
+
+}
+int PiggyBankCalculator(StPiggyBank Coins){
+	
+		int TotalPennies = 0;
+		TotalPennies = Coins.Penny * 1+Coins.Nickel * 5+Coins.Dime*10+Coins.Quarter * 25 + Coins.Dollar * 100;
+		return TotalPennies;
+}
+
+
+int main() {
+	int TotalCoins=PiggyBankCalculator(ReadPiggyBank());
+	cout << "Total Pennies = "<<TotalCoins<<endl;
+	cout << "Total Dollar = " << (float)TotalCoins/100 << endl;
+	return 0;
+
+}
