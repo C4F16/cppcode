@@ -7,71 +7,90 @@ int main() {
         return 0;
 }
 -------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#include<iostream>                            
+#include<cmath>
+using namespace std;
+void PrintLaters() {
+	for (char i = 'A'; i <= 'Z'; i++)
+{
+		cout << i << endl;
+}
+}
+
+int main() {
+	PrintLaters();
+	return 0;
+}
+======================
+//#include<iostream>
+#include<cmath>
+using namespace std;
+void PrintLaters() {
+	for (char i = 65; i <= 90; i++)
+		cout << i << endl;
+}
+
+int main() {
+	PrintLaters();
+	return 0;
+}
+-------------------------------------------
+Q47
+#include<iostream>
+#include<cmath>
+using namespace std;
+float ReadNumber(string massag) {
+	int a;
+	do
+	{
+		cout << massag << endl;
+		cin >> a;
+
+	} while (a < 0);
+
+	return a;
+}
+float ReadTotalMonths(float Loan , float Instalment)
+{
+
+	return Loan / Instalment;
+}
+
+int main() {
+	float Loan = ReadNumber("Enter Loan Amount ");
+	float Instalment = ReadNumber("Enter Monthly Instalment");
+	cout << "Total Months To Pay = " << ReadTotalMonths(Loan, Instalment);
+	return 0;
+}
+-------------------------------------------
+Q48
+#include<iostream>
+#include<cmath>
+using namespace std;
+float ReadNumber(string massag) {
+	int a;
+	do
+	{
+		cout << massag << endl;
+		cin >> a;
+
+	} while (a < 0);
+
+	return a;
+}
+float MonthlyInstalment(float Loan , float HowManyMonths)
+{
+
+	return Loan / HowManyMonths;
+}
+
+int main() {
+	float Loan = ReadNumber("Enter Loan Amount ");
+	float HowManyMonths = ReadNumber("Enter Hom Many  Months ");
+	cout << "Monthly Instalment  = " << MonthlyInstalment(Loan, HowManyMonths);
+	return 0;
+}
+-------------------------------------------
 Q 49 
 #include <iostream>
 using namespace std;
@@ -93,7 +112,86 @@ int main() {
     return 0;
 }
 ----------------------------------
-Q 50 
+#include<iostream>
+#include<cmath>
+using namespace std;
+string ReadNumber( ) {
+	string PIN;
+	
+		cout << "Enter PIN" << endl;
+		cin >> PIN;
+		return PIN;
 
+
+}
+bool Login() {
+	string	PINCOD;
+	do
+	{
+		PINCOD = ReadNumber();
+		if (PINCOD == "1234") {
+			return 1;
+		}
+		else
+		{
+			cout<<"error\n";
+		}
+	} while (PINCOD != "1234");
+}
+
+
+
+int main() {
+	if (Login()) {
+		cout << "ur account balnce is " << 7500<<endl;
+	}
+	
+	return 0;
+}
+----------------------------------
+Q 50 
+#include<iostream>
+#include<cmath>
+using namespace std;
+string ReadNumber( ) {
+	string PIN;
+	
+		cout <<"Enter PIN" << endl;
+		cin >> PIN;
+		return PIN;
+
+
+}
+bool Login() {
+	string	PINCOD;
+	int i = 3;
+	do
+	{
+		i--;
+		PINCOD = ReadNumber();
+		if (PINCOD == "1234") {
+			return 1;
+		}
+		else
+		{
+			cout<<endl<<"error "<<" "<<"Weong PIN , You Have "<<i<<"More Times"<<endl;
+		}
+	} while (i>=1&&PINCOD != "1234");
+}
+
+
+
+int main() {
+	if (Login()) {
+		cout << "ur account balnce is " << 7500<<endl;
+	}
+	else
+	{
+		cout <<endl<< "Your card blocked call bank for helpe";
+		
+	}
+	
+	return 0;
+}
 
 
