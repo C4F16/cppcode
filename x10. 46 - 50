@@ -153,12 +153,12 @@ Q 50
 #include<iostream>
 #include<cmath>
 using namespace std;
-string ReadNumber( ) {
+string ReadNumber() {
 	string PIN;
-	
-		cout <<"Enter PIN" << endl;
-		cin >> PIN;
-		return PIN;
+
+	cout << "Enter PIN" << endl;
+	cin >> PIN;
+	return PIN;
 
 
 }
@@ -174,24 +174,26 @@ bool Login() {
 		}
 		else
 		{
-			cout<<endl<<"error "<<" "<<"Weong PIN , You Have "<<i<<"More Times"<<endl;
+			cout << endl<< "Weong PIN , You Have " << i << "More Times" << endl;
+
 		}
-	} while (i>=1&&PINCOD != "1234");
+
+	} while (i >= 1 && PINCOD != "1234");
+	return 0;
 }
 
 
 
 int main() {
 	if (Login()) {
-		cout << "ur account balnce is " << 7500<<endl;
+		cout << "ur account balnce is " << 7500 << endl;
 	}
 	else
 	{
-		cout <<endl<< "Your card blocked call bank for helpe";
-		
+		cout << endl << "Your card blocked call bank for helpe"<<endl;
+
 	}
-	
+
 	return 0;
 }
-
 
